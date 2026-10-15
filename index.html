@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RABENANDRASANA Julien Gabriel | Portfolio Développeur Web & Mobile | EMIT Informatique</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/julien.jpg">
+  
+  <!-- Google Fonts (Poppins & Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Custom Luxury Glassmorphism & Rose CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Canevas d'Arrière-Plan Interactif (Étoiles & Particules) -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Orbes Lumineuses Ambiantes (Rose, Violet, Cyan) -->
+  <div class="ambient-glow-orb orb-1"></div>
+  <div class="ambient-glow-orb orb-2"></div>
+  <div class="ambient-glow-orb orb-3"></div>
+
+  <!-- ==========================================================================
+       BARRE DE NAVIGATION BOOTSTRAP GLASSMORPHISME
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+    <div class="container">
+      <a class="nav-brand-logo" href="#accueil">
+        <span class="logo-dot"></span>
+        <span>JULIEN<span class="text-rose">.G</span></span>
+      </a>
+
+      <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#portfolioNav" aria-controls="portfolioNav" aria-expanded="false" aria-label="Basculer la navigation">
+        <i class="bi bi-list fs-2 text-rose"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="portfolioNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-1 my-3 my-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#accueil">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#a-propos">À Propos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#competences">Compétences</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projets">Projets</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#parcours">Parcours</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a href="https://wa.me/261384376156?text=Bonjour%20Julien%2C%20j%27ai%20vu%20votre%20portfolio" target="_blank" class="btn btn-rose-glow btn-sm px-4">
+              <i class="bi bi-whatsapp"></i> WhatsApp Direct
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       SECTION HÉRO (ACCUEIL)
+       ========================================================================== -->
+  <section id="accueil" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        
+        <!-- Colonne Gauche : Présentation & Pitch -->
+        <div class="col-lg-7" data-aos="fade-right" data-aos-duration="1000">
+          <div class="badge-scientific mb-3">
+            <i class="bi bi-mortarboard-fill text-rose"></i>
+            <span>Étudiant EMIT Informatique & Rigueur Scientifique Physique</span>
+          </div>
+
+          <h2 class="hero-subtitle">Bienvenue sur mon Portfolio Officiel</h2>
+          
+          <h1 class="hero-title">
+            RABENANDRASANA <br>
+            <span class="text-gradient-rose">Julien Gabriel</span>
+          </h1>
+
+          <!-- Texte Dynamique Tape-Machine (Stabilisé & Anti-saut) -->
+          <div class="typing-wrapper">
+            <span class="typing-prefix">Je suis :</span>
+            <div class="typed-box">
+              <span id="typed-text"></span><span class="typed-cursor">|</span>
+            </div>
+          </div>
+
+          <p class="hero-description">
+            Développeur passionné doté d'une double compétence exceptionnelle : <strong>2 années d'études intensives en Physique à la Faculté des Sciences</strong> (2022-2024) combinées à ma formation actuelle en <strong>Informatique à l'EMIT</strong> (depuis 2024). Concepteur des solutions logicielles <strong>CFF Manager</strong> et <strong>Snack Bar</strong>.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3 mb-4">
+            <a href="#projets" class="btn-rose-glow">
+              <i class="bi bi-code-square"></i> Explorer mes Réalisations
+            </a>
+            <a href="#contact" class="btn-glass-outline">
+              <i class="bi bi-envelope-paper-heart-fill text-rose"></i> Me Contacter
+            </a>
+          </div>
+
+          <!-- Compteurs Statistiques Éclair -->
+          <div class="row pt-3 g-3">
+            <div class="col-4">
+              <div class="glass-panel p-3 text-center">
+                <h3 class="text-gradient-rose fw-bold mb-0">EMIT</h3>
+                <small class="text-muted">Mention Info (2024+)</small>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="glass-panel p-3 text-center">
+                <h3 class="text-gradient-rose fw-bold mb-0">2 Ans</h3>
+                <small class="text-muted">Fac. Sciences Physique</small>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="glass-panel p-3 text-center">
+                <h3 class="text-gradient-rose fw-bold mb-0">100%</h3>
+                <small class="text-muted">Rigueur & Passion</small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Colonne Droite : CARTE 3D HOLOGRAPHIQUE INTERACTIVE FLIP (Cliquez pour tourner !) -->
+        <div class="col-lg-5" data-aos="fade-left" data-aos-duration="1000">
+          <div class="flip-card-wrapper">
+            
+            <!-- Indication animée de rotation -->
+            <div class="flip-card-hint flip-trigger" id="flipCardHint">
+              <i class="bi bi-arrow-repeat"></i> Cliquez sur la carte pour la retourner 🔄
+            </div>
+
+            <!-- Conteneur rotatif 3D -->
+            <div class="flip-card-inner flip-trigger" id="flipCardInner">
+              
+              <!-- ================= FACE AVANT (Hologramme Instagram Glass) ================= -->
+              <div class="flip-face flip-face-front">
+                
+                <!-- En-tête de la carte -->
+                <div class="holo-header">
+                  <div class="holo-username">
+                    <i class="bi bi-chevron-left text-muted me-1"></i>
+                    <span>julien.gabriel</span>
+                    <i class="bi bi-patch-check-fill verified-icon" title="Profil Vérifié"></i>
+                  </div>
+                  <div class="holo-actions">
+                    <i class="bi bi-bell-fill text-rose"></i>
+                    <i class="bi bi-three-dots"></i>
+                  </div>
+                </div>
+
+                <!-- Avatar & Statistiques -->
+                <div class="holo-profile-row">
+                  <div class="holo-avatar-wrap">
+                    <img src="assets/images/julien.jpg" alt="Julien Gabriel" class="holo-avatar-img">
+                  </div>
+                  <div class="holo-stats">
+                    <div class="holo-stat-item">
+                      <div class="stat-num">2+</div>
+                      <div class="stat-lbl">Projets</div>
+                    </div>
+                    <div class="holo-stat-item">
+                      <div class="stat-num">EMIT</div>
+                      <div class="stat-lbl">Informatique</div>
+                    </div>
+                    <div class="holo-stat-item">
+                      <div class="stat-num">2 Ans</div>
+                      <div class="stat-lbl">Physique</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Identité & Rôles -->
+                <div class="holo-identity">
+                  <div class="holo-full-name">RABENANDRASANA Julien Gabriel</div>
+                  <div class="holo-title-tag">Développeur Logiciel & Étudiant EMIT</div>
+                </div>
+
+                <!-- Lignes de Présentation -->
+                <div class="holo-bio-lines">
+                  <div class="bio-line">
+                    <span>💻</span>
+                    <span>Développeur Web & Mobile Passionné</span>
+                  </div>
+                  <div class="bio-line">
+                    <span>🎓</span>
+                    <span>Étudiant à l'<strong>EMIT</strong> Mention Informatique (2024+)</span>
+                  </div>
+                  <div class="bio-line">
+                    <span>⚛️</span>
+                    <span>2 Ans de Physique - Faculté des Sciences (2022-2024)</span>
+                  </div>
+                  <div class="bio-line">
+                    <span>📍</span>
+                    <span>Madagascar 🇲🇬 &bull; Disponible pour vos Projets</span>
+                  </div>
+                  <div class="bio-line">
+                    <span>🚀</span>
+                    <span>Créateur de <strong>CFF Manager</strong> & <strong>Snack Bar</strong></span>
+                  </div>
+                </div>
+
+                <!-- Pied de Carte Holographique -->
+                <div class="holo-card-footer">
+                  <a href="https://www.facebook.com/rabenandrasana.julien.gabriel" target="_blank" class="holo-link-url">
+                    <i class="bi bi-link-45deg fs-5"></i>
+                    <span>facebook.com/rabenandrasana.julien.gabriel</span>
+                  </a>
+                  <span class="badge rounded-pill px-3 py-1" style="font-size: 0.72rem; background: var(--rose-gradient);">
+                    Disponible
+                  </span>
+                </div>
+
+              </div>
+
+              <!-- ================= FACE ARRIÈRE (Détails Secrets & Carte Numérique EMIT) ================= -->
+              <div class="flip-face flip-face-back">
+                
+                <div class="holo-back-header">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="holo-chip">EMIT</div>
+                    <div>
+                      <h6 class="text-white fw-bold mb-0" style="font-size: 0.95rem;">CARTE ÉTUDIANT & DÉVELOPPEUR</h6>
+                      <small class="text-rose" style="font-size: 0.7rem;">ID Numérique Holographique</small>
+                    </div>
+                  </div>
+                  <span class="back-badge-emit">EMIT INFO</span>
+                </div>
+
+                <div class="my-3">
+                  <div class="back-feature-item">
+                    <div class="d-flex align-items-center gap-2 text-cyan-accent mb-1" style="color: var(--cyan-accent); font-size: 0.82rem; font-weight: 700;">
+                      <i class="bi bi-mortarboard-fill"></i> Formation Actuelle (depuis 2024)
+                    </div>
+                    <div class="text-white fw-semibold small">EMIT - Mention Informatique</div>
+                    <div class="text-muted" style="font-size: 0.75rem;">École de Management et d'Innovation Technologique</div>
+                  </div>
+
+                  <div class="back-feature-item">
+                    <div class="d-flex align-items-center gap-2 text-rose mb-1" style="font-size: 0.82rem; font-weight: 700;">
+                      <i class="bi bi-atom"></i> Socle Scientifique d'Excellence
+                    </div>
+                    <div class="text-white fw-semibold small">2 Ans de Physique (2022 - 2024)</div>
+                    <div class="text-muted" style="font-size: 0.75rem;">Faculté des Sciences (Mention Physique) & Bac Série D (2022)</div>
+                  </div>
+
+                  <div class="back-feature-item">
+                    <div class="d-flex align-items-center gap-2 text-success mb-1" style="font-size: 0.82rem; font-weight: 700;">
+                      <i class="bi bi-lightning-charge-fill"></i> Super-Pouvoirs & Valeur Ajoutée
+                    </div>
+                    <div class="text-white fw-semibold small">Logique d'ingénierie & Clean Code</div>
+                    <div class="text-muted" style="font-size: 0.75rem;">Capacité exceptionnelle à résoudre des algorithmes complexes et structurer des architectures logicielles évolutives.</div>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center pt-2 border-top border-secondary border-opacity-25">
+                  <div class="text-muted" style="font-size: 0.75rem;">
+                    <i class="bi bi-fingerprint text-rose me-1"></i> Julien Gabriel Rabenandrasana
+                  </div>
+                  <button type="button" class="back-flip-btn">
+                    <i class="bi bi-arrow-repeat me-1"></i> Face Avant
+                  </button>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bouton Dansant avec Flèche (Pour explorer vers le bas) -->
+    <a href="#a-propos" class="scroll-indicator-wrap" title="Découvrir mon parcours">
+      <span class="scroll-text">Découvrir mon profil</span>
+      <div class="dancing-arrow-btn">
+        <i class="bi bi-chevron-double-down"></i>
+      </div>
+    </a>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION À PROPOS
+       ========================================================================== -->
+  <section id="a-propos" class="py-5">
+    <div class="container">
+      
+      <div class="text-center" data-aos="fade-up">
+        <span class="section-tagline">Faisons Connaissance</span>
+        <h2 class="section-title">À Propos de <span class="text-gradient-rose">Moi</span></h2>
+        <p class="section-subtitle">
+          Une alliance unique entre la rigueur de la recherche scientifique et la créativité du développement logiciel de pointe.
+        </p>
+      </div>
+
+      <div class="row align-items-center g-5 mt-2">
+        
+        <!-- Cadre Photo avec Bordure Rose & Glassmorphisme -->
+        <div class="col-lg-5" data-aos="fade-right">
+          <div class="about-image-card">
+            <img src="assets/images/julien.jpg" alt="RABENANDRASANA Julien Gabriel">
+            <div class="about-image-overlay">
+              <h4 class="text-white fw-bold mb-1">RABENANDRASANA Julien Gabriel</h4>
+              <p class="text-rose mb-0 small">
+                <i class="bi bi-patch-check-fill me-1"></i> Développeur Logiciel & Étudiant EMIT Informatique
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Présentation Détaillée & Parcours -->
+        <div class="col-lg-7" data-aos="fade-left">
+          <div class="glass-panel p-4 p-md-5">
+            <h3 class="fw-bold mb-3 text-white">
+              L'Esprit Scientifique au Service du <span class="text-rose">Génie Logiciel</span>
+            </h3>
+
+            <p class="text-light opacity-90 mb-3">
+              Je m'appelle <strong>RABENANDRASANA Julien Gabriel</strong>. Titulaire d'un <strong>Baccalauréat Scientifique Série D en 2022</strong>, j'ai poursuivi un cursus approfondi de <strong>2 années en Physique à la Faculté des Sciences</strong> (années universitaires 2022-2023 et 2023-2024).
+            </p>
+
+            <p class="text-light opacity-90 mb-3">
+              Depuis <strong>2024 jusqu'à maintenant</strong>, je poursuis mes études à l'<strong>EMIT (École de Management et d'Innovation Technologique) en Mention Informatique</strong>. Cette transition naturelle de la Physique fondamentale vers l'Informatique me confère une rigueur d'analyse, un sens poussé de l'abstraction mathématique et une méthode infaillible pour concevoir des applications web et mobiles robustes.
+            </p>
+
+            <p class="text-light opacity-90 mb-4">
+              J'ai notamment conçu et déployé avec succès des solutions d'envergure telles que <strong>CFF Manager</strong> (solution web de pilotage administratif) et <strong>Snack Bar</strong> (application mobile de point de vente et encaissement tactile).
+            </p>
+
+            <!-- Grille d'Informations Clés -->
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <div class="info-item-glass">
+                  <div class="info-icon">
+                    <i class="bi bi-mortarboard-fill"></i>
+                  </div>
+                  <div>
+                    <small class="text-muted d-block">Formation Supérieure</small>
+                    <strong class="text-white">EMIT - Mention Informatique</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="info-item-glass">
+                  <div class="info-icon">
+                    <i class="bi bi-atom"></i>
+                  </div>
+                  <div>
+                    <small class="text-muted d-block">Socle Scientifique</small>
+                    <strong class="text-white">Bac D + 2 Ans Physique</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="info-item-glass">
+                  <div class="info-icon">
+                    <i class="bi bi-code-slash"></i>
+                  </div>
+                  <div>
+                    <small class="text-muted d-block">Spécialisation</small>
+                    <strong class="text-white">Développement Web & Mobile</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="info-item-glass">
+                  <div class="info-icon">
+                    <i class="bi bi-whatsapp"></i>
+                  </div>
+                  <div>
+                    <small class="text-muted d-block">WhatsApp & Téléphone</small>
+                    <strong class="text-white">+261 38 43 761 56</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-2 d-flex flex-wrap gap-3">
+              <a href="https://wa.me/261384376156" target="_blank" class="btn-rose-glow">
+                <i class="bi bi-chat-dots-fill"></i> Démarrer une conversation
+              </a>
+              <a href="https://www.facebook.com/rabenandrasana.julien.gabriel" target="_blank" class="btn-glass-outline">
+                <i class="bi bi-facebook text-rose"></i> Profil Facebook
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION COMPÉTENCES
+       ========================================================================== -->
+  <section id="competences">
+    <div class="container">
+      
+      <div class="text-center" data-aos="fade-up">
+        <span class="section-tagline">Expertise & Maîtrise Technique</span>
+        <h2 class="section-title">Mes <span class="text-gradient-rose">Compétences Clés</span></h2>
+        <p class="section-subtitle">
+          Des compétences concrètes alliant conception logicielle moderne et pensée algorithmique de haut niveau.
+        </p>
+      </div>
+
+      <div class="row g-4 mt-2">
+        
+        <!-- Compétence 1 : Développement Web -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-card">
+            <div class="skill-icon-wrap">
+              <i class="bi bi-code-slash"></i>
+            </div>
+            <h4 class="skill-card-title">Développement Web</h4>
+            <p class="skill-card-text">
+              Conception d'applications web modernes, ultra-rapides, responsives et fiables avec HTML5, CSS3, JavaScript ES6+ et Bootstrap 5.
+            </p>
+            <div class="skill-progress-block">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="skill-stat-label">Niveau de Maîtrise</span>
+                <span class="skill-stat-val">92%</span>
+              </div>
+              <div class="progress-custom">
+                <div class="progress-bar-rose h-100" style="width: 92%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compétence 2 : Développement Mobile -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-card">
+            <div class="skill-icon-wrap">
+              <i class="bi bi-phone"></i>
+            </div>
+            <h4 class="skill-card-title">Applications Mobiles</h4>
+            <p class="skill-card-text">
+              Conception d'interfaces tactiles intuitives et réactives pour smartphones, gestion des commandes en temps réel et systèmes de caisse mobile (Snack Bar).
+            </p>
+            <div class="skill-progress-block">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="skill-stat-label">Niveau de Maîtrise</span>
+                <span class="skill-stat-val">88%</span>
+              </div>
+              <div class="progress-custom">
+                <div class="progress-bar-rose h-100" style="width: 88%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compétence 3 : Rigueur Physique & EMIT -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="skill-card">
+            <div class="skill-icon-wrap">
+              <i class="bi bi-cpu"></i>
+            </div>
+            <h4 class="skill-card-title">Algorithmes & Logique</h4>
+            <p class="skill-card-text">
+              Modélisation analytique, résolution de problèmes complexes et optimisation algorithmique issues de 2 ans de Physique et de ma formation à l'EMIT.
+            </p>
+            <div class="skill-progress-block">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="skill-stat-label">Niveau de Maîtrise</span>
+                <span class="skill-stat-val">95%</span>
+              </div>
+              <div class="progress-custom">
+                <div class="progress-bar-rose h-100" style="width: 95%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compétence 4 : UI/UX & Design -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+          <div class="skill-card">
+            <div class="skill-icon-wrap">
+              <i class="bi bi-palette"></i>
+            </div>
+            <h4 class="skill-card-title">Design & Animations</h4>
+            <p class="skill-card-text">
+              Création d'interfaces haut de gamme ("Top Model"), glassmorphisme transparent, animations 3D dynamiques et harmonie des couleurs.
+            </p>
+            <div class="skill-progress-block">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="skill-stat-label">Niveau de Maîtrise</span>
+                <span class="skill-stat-val">90%</span>
+              </div>
+              <div class="progress-custom">
+                <div class="progress-bar-rose h-100" style="width: 90%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Badges Technologiques -->
+      <div class="glass-panel p-4 mt-5 text-center" data-aos="fade-up">
+        <h5 class="text-white mb-3">Technologies et Outils Maîtrisés</h5>
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+          <span class="badge-scientific"><i class="fab fa-html5"></i> HTML5 Sémantique</span>
+          <span class="badge-scientific"><i class="fab fa-css3-alt"></i> CSS3 & Glassmorphism</span>
+          <span class="badge-scientific"><i class="fab fa-js"></i> JavaScript ES6+</span>
+          <span class="badge-scientific"><i class="fab fa-bootstrap"></i> Bootstrap 5.3</span>
+          <span class="badge-scientific"><i class="bi bi-phone-fill"></i> Mobile-First UX</span>
+          <span class="badge-scientific"><i class="bi bi-database-check"></i> Stockage & APIs Web</span>
+          <span class="badge-scientific"><i class="bi bi-diagram-3-fill"></i> Algorithmes & Modélisation</span>
+          <span class="badge-scientific"><i class="fab fa-git-alt"></i> Git & Versioning</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION PROJETS (CFF MANAGER & SNACK BAR)
+       ========================================================================== -->
+  <section id="projets">
+    <div class="container">
+      
+      <div class="text-center" data-aos="fade-up">
+        <span class="section-tagline">Portefeuille de Réalisations</span>
+        <h2 class="section-title">Mes Projets <span class="text-gradient-rose">Déployés</span></h2>
+        <p class="section-subtitle">
+          Découvrez mes applications concrètes conçues pour optimiser les processus de gestion et de vente commerciale.
+        </p>
+      </div>
+
+      <div class="row g-4 mt-2">
+        
+        <!-- Projet 1 : CFF Manager -->
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="project-card">
+            
+            <div class="project-preview">
+              <span class="project-type-badge">
+                <i class="bi bi-laptop me-1"></i> Application Web
+              </span>
+              
+              <!-- Mockup Navigateur Web Épuré -->
+              <div class="project-preview-mockup">
+                <div class="mockup-header-dots">
+                  <div class="mockup-dot dot-red"></div>
+                  <div class="mockup-dot dot-yellow"></div>
+                  <div class="mockup-dot dot-green"></div>
+                </div>
+                <div class="mockup-body">
+                  <div class="text-rose mb-2">
+                    <i class="bi bi-speedometer2 fs-1"></i>
+                  </div>
+                  <h5 class="text-white fw-bold mb-1">CFF Manager Dashboard</h5>
+                  <p class="text-muted small mb-0">Système de Gestion & Supervision Intelligente</p>
+                  <div class="d-flex gap-2 mt-2">
+                    <span class="badge bg-dark border border-secondary" style="font-size: 0.68rem;">Statistiques Live</span>
+                    <span class="badge bg-dark border border-secondary" style="font-size: 0.68rem;">Rapports Automatisés</span>
+                    <span class="badge bg-dark border border-secondary" style="font-size: 0.68rem;">Sécurité & Rôles</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="project-content">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h3 class="project-title mb-0">CFF Manager</h3>
+                <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1 rounded-pill small">
+                  Projet Déployé
+                </span>
+              </div>
+              
+              <p class="project-description">
+                Plateforme web complète dédiée à l'automatisation administrative, au suivi des flux d'activités, à la gestion centralisée des membres et à la génération instantanée de rapports statistiques fiables.
+              </p>
+
+              <div class="d-flex flex-wrap gap-2 mb-4">
+                <span class="tech-tag-pill">Application Web</span>
+                <span class="tech-tag-pill">JavaScript ES6</span>
+                <span class="tech-tag-pill">Bootstrap 5</span>
+                <span class="tech-tag-pill">Tableau de Bord</span>
+                <span class="tech-tag-pill">Gestion Administrative</span>
+              </div>
+
+              <div class="mt-auto pt-2">
+                <button type="button" class="btn-rose-glow w-100" data-bs-toggle="modal" data-bs-target="#projectDetailModal" data-project-trigger="cff">
+                  <i class="bi bi-info-circle-fill"></i> Consulter les Détails du Projet
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Projet 2 : Snack Bar -->
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="project-card">
+            
+            <div class="project-preview">
+              <span class="project-type-badge">
+                <i class="bi bi-phone me-1"></i> Application Mobile
+              </span>
+
+              <!-- Mockup Téléphone Portable Épuré -->
+              <div class="project-preview-mockup" style="max-width: 270px; height: 88%;">
+                <div class="mockup-header-dots justify-content-center">
+                  <div class="mockup-dot bg-secondary" style="width: 40px; height: 5px; border-radius: 4px;"></div>
+                </div>
+                <div class="mockup-body">
+                  <div class="text-rose mb-1">
+                    <i class="bi bi-cup-hot-fill fs-2"></i>
+                  </div>
+                  <h6 class="text-white fw-bold mb-0">Snack Bar Mobile</h6>
+                  <p class="text-muted small mb-2" style="font-size: 0.72rem;">Caisse & Prise de Commande Tactile</p>
+                  <div class="w-100 bg-dark p-2 rounded border border-secondary text-start" style="font-size: 0.72rem;">
+                    <div class="d-flex justify-content-between text-light">
+                      <span>Menu / Plats :</span>
+                      <span class="text-rose">Opérationnel</span>
+                    </div>
+                    <div class="d-flex justify-content-between text-light mt-1">
+                      <span>Calcul Caisse :</span>
+                      <span class="text-success">Automatisé</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="project-content">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h3 class="project-title mb-0">Snack Bar</h3>
+                <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1 rounded-pill small">
+                  Projet Déployé
+                </span>
+              </div>
+              
+              <p class="project-description">
+                Application mobile tactile conçue pour optimiser le fonctionnement d'un snack-bar ou restaurant rapide : prise de commande express, calcul automatique des additions, suivi des stocks et clôture de caisse simplifiée.
+              </p>
+
+              <div class="d-flex flex-wrap gap-2 mb-4">
+                <span class="tech-tag-pill">Application Mobile</span>
+                <span class="tech-tag-pill">UI Tactile</span>
+                <span class="tech-tag-pill">Point de Vente (POS)</span>
+                <span class="tech-tag-pill">Gestion de Caisse</span>
+                <span class="tech-tag-pill">Mobile First</span>
+              </div>
+
+              <div class="mt-auto pt-2">
+                <button type="button" class="btn-rose-glow w-100" data-bs-toggle="modal" data-bs-target="#projectDetailModal" data-project-trigger="snack">
+                  <i class="bi bi-info-circle-fill"></i> Consulter les Détails du Projet
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION PARCOURS ACADÉMIQUE (TIMELINE)
+       ========================================================================== -->
+  <section id="parcours">
+    <div class="container">
+      
+      <div class="text-center" data-aos="fade-up">
+        <span class="section-tagline">Cursus & Évolution</span>
+        <h2 class="section-title">Mon Parcours <span class="text-gradient-rose">Académique</span></h2>
+        <p class="section-subtitle">
+          Les étapes marquantes de ma formation universitaire et de mon socle scientifique d'excellence.
+        </p>
+      </div>
+
+      <div class="row justify-content-center mt-4">
+        <div class="col-lg-9">
+          
+          <div class="timeline-track">
+            
+            <!-- Étape 1 : EMIT depuis 2024 jusqu'à maintenant -->
+            <div class="timeline-item" data-aos="fade-up">
+              <div class="timeline-glass-card border-rose" style="box-shadow: 0 10px 30px rgba(255, 42, 133, 0.25);">
+                <div class="timeline-date">
+                  <i class="bi bi-mortarboard-fill"></i> De 2024 jusqu'à Aujourd'hui
+                </div>
+                <h4 class="text-white fw-bold mb-2">
+                  EMIT - Mention Informatique
+                </h4>
+                <p class="text-light opacity-90 mb-0">
+                  Formation supérieure à l'<strong>École de Management et d'Innovation Technologique (EMIT)</strong> en Mention Informatique. Approfondissement du génie logiciel, de l'architecture des applications, des bases de données et des technologies web & mobiles avancées.
+                </p>
+              </div>
+            </div>
+
+            <!-- Étape 2 : Faculté des Sciences (Physique L2) 2023-2024 -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="timeline-glass-card">
+                <div class="timeline-date">
+                  <i class="bi bi-atom"></i> Année Universitaire 2023 - 2024
+                </div>
+                <h4 class="text-white fw-bold mb-2">
+                  Faculté des Sciences - Mention Physique (L2)
+                </h4>
+                <p class="text-muted mb-0">
+                  Deuxième année d'études en Sciences Physiques : électromagnétisme, thermodynamique, optique et analyse mathématique appliquée. Développement d'une capacité d'analyse aiguë et d'une rigueur scientifique exemplaire.
+                </p>
+              </div>
+            </div>
+
+            <!-- Étape 3 : Faculté des Sciences (Physique L1) 2022-2023 -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="timeline-glass-card">
+                <div class="timeline-date">
+                  <i class="bi bi-clock-history"></i> Année Universitaire 2022 - 2023
+                </div>
+                <h4 class="text-white fw-bold mb-2">
+                  Faculté des Sciences - Mention Physique (L1)
+                </h4>
+                <p class="text-muted mb-0">
+                  Entrée à l'université au sein de la Faculté des Sciences. Apprentissage des fondements de la physique, mécanique générale, méthodes expérimentales et démarche scientifique de résolution de problèmes.
+                </p>
+              </div>
+            </div>
+
+            <!-- Étape 4 : Baccalauréat 2022 -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="timeline-glass-card">
+                <div class="timeline-date">
+                  <i class="bi bi-award-fill"></i> Année 2022
+                </div>
+                <h4 class="text-white fw-bold mb-2">
+                  Baccalauréat Scientifique Série D
+                </h4>
+                <p class="text-muted mb-0">
+                  Obtention du Baccalauréat Scientifique Série D à Ambalavao, confirmant de solides acquis en mathématiques, sciences physiques et sciences naturelles.
+                </p>
+              </div>
+            </div>
+
+
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION CONTACT
+       ========================================================================== -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      
+      <div class="text-center" data-aos="fade-up">
+        <span class="section-tagline">Travaillons Ensemble</span>
+        <h2 class="section-title">Prendre <span class="text-gradient-rose">Contact</span></h2>
+        <p class="section-subtitle">
+          Vous avez un projet web ou mobile ? Une opportunité de collaboration ? Envoyez-moi un message direct ci-dessous.
+        </p>
+      </div>
+
+      <div class="row g-5 mt-2 justify-content-center">
+        
+        <!-- Cartes de Contact Rapide -->
+        <div class="col-lg-5" data-aos="fade-right">
+          
+          <h4 class="text-white fw-bold mb-4">Canaux de communication directs</h4>
+
+          <!-- WhatsApp Direct -->
+          <a href="https://wa.me/261384376156?text=Bonjour%20Julien%2C%20j%27ai%20vu%20votre%20portfolio" target="_blank" class="social-button-card whatsapp mb-3">
+            <div class="social-btn-icon text-success">
+              <i class="bi bi-whatsapp"></i>
+            </div>
+            <div>
+              <div class="text-muted small">WhatsApp Professionnel</div>
+              <strong class="text-white fs-5">+261 38 43 761 56</strong>
+              <div class="text-success small"><i class="bi bi-chat-dots-fill"></i> Cliquez pour discuter immédiatement</div>
+            </div>
+          </a>
+
+          <!-- Facebook Officiel -->
+          <a href="https://www.facebook.com/rabenandrasana.julien.gabriel" target="_blank" class="social-button-card facebook mb-3">
+            <div class="social-btn-icon text-primary">
+              <i class="bi bi-facebook"></i>
+            </div>
+            <div>
+              <div class="text-muted small">Profil Facebook Officiel</div>
+              <strong class="text-white">Julien Gabriel Rabenandrasana</strong>
+              <div class="text-primary small"><i class="bi bi-box-arrow-up-right"></i> facebook.com/rabenandrasana.julien.gabriel</div>
+            </div>
+          </a>
+
+          <!-- Localisation & Disponibilité -->
+          <div class="social-button-card">
+            <div class="social-btn-icon text-rose">
+              <i class="bi bi-geo-alt-fill"></i>
+            </div>
+            <div>
+              <div class="text-muted small">Localisation & Disponibilité</div>
+              <strong class="text-white">Ambalavao / Fianarantsoa, Madagascar</strong>
+              <div class="text-muted small">Disponible pour des missions en présentiel ou à distance (Remote)</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Formulaire de Contact Interactif WhatsApp -->
+        <div class="col-lg-7" data-aos="fade-left">
+          <div class="contact-glass-card">
+            <h4 class="text-white fw-bold mb-2">Envoyer un message instantané</h4>
+            <p class="text-muted small mb-4">
+              Remplissez ce formulaire pour m'adresser votre demande directement sur mon WhatsApp.
+            </p>
+
+            <form id="whatsappContactForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label text-muted small">Votre Nom & Prénom</label>
+                  <input type="text" class="form-control form-control-glass" id="senderName" placeholder="Ex: Jean Rakoto" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label text-muted small">Objet de votre demande</label>
+                  <input type="text" class="form-control form-control-glass" id="senderSubject" placeholder="Ex: Projet Web / Recrutement / Devis" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label text-muted small">Votre Message</label>
+                  <textarea class="form-control form-control-glass" id="senderMessage" rows="4" placeholder="Décrivez votre besoin, les spécifications de votre projet ou votre proposition..." required></textarea>
+                </div>
+                <div class="col-12 pt-2">
+                  <button type="submit" class="btn-rose-glow w-100 py-3">
+                    <i class="bi bi-send-fill"></i> Envoyer directement via WhatsApp
+                  </button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       DOCK DE NAVIGATION FLOTTANT : 2 BOUTONS DANSANTS (MONTER & DESCENDRE)
+       ========================================================================== -->
+  <div class="floating-nav-dock" id="floatingNavDock">
+    <!-- Bouton Dansant : Monter pas à pas -->
+    <button class="nav-dancing-btn btn-scroll-up" id="btnScrollUp" title="Monter d'un cran" aria-label="Monter pas à pas">
+      <i class="bi bi-chevron-up"></i>
+      <span class="nav-btn-tooltip">Monter</span>
+    </button>
+    
+    <!-- Bouton Dansant : Descendre pas à pas -->
+    <button class="nav-dancing-btn btn-scroll-down" id="btnScrollDown" title="Descendre d'un cran" aria-label="Descendre pas à pas">
+      <i class="bi bi-chevron-down"></i>
+      <span class="nav-btn-tooltip">Descendre</span>
+    </button>
+  </div>
+
+  <!-- ==========================================================================
+       MODALE BOOTSTRAP DE DÉTAILS PROJET
+       ========================================================================== -->
+  <div class="modal fade" id="projectDetailModal" tabindex="-1" aria-labelledby="modalProjectTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content glass-panel border-rose" style="background: rgba(14, 11, 26, 0.96); backdrop-filter: blur(25px);">
+        
+        <div class="modal-header border-secondary border-opacity-25 pb-3">
+          <div>
+            <span class="badge rounded-pill px-3 py-1 mb-2" id="modalProjectBadge" style="background: var(--rose-gradient);">
+              Projet Réalisé
+            </span>
+            <h4 class="modal-title text-white fw-bold" id="modalProjectTitle">CFF Manager</h4>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        </div>
+
+        <div class="modal-body py-4">
+          <p class="text-light" id="modalProjectDesc" style="font-size: 1.05rem; line-height: 1.7;">
+            Description détaillée du projet...
+          </p>
+
+          <h5 class="text-white fw-bold mt-4 mb-3">
+            <i class="bi bi-stars text-rose me-2"></i> Fonctionnalités Clés et Modules Développés :
+          </h5>
+          <ul class="list-unstyled text-light" id="modalProjectFeatures">
+            <!-- Rempli dynamiquement -->
+          </ul>
+
+          <h5 class="text-white fw-bold mt-4 mb-3">
+            <i class="bi bi-tools text-rose me-2"></i> Stack Technologique Utilisée :
+          </h5>
+          <div class="d-flex flex-wrap gap-2" id="modalProjectTech">
+            <!-- Rempli dynamiquement -->
+          </div>
+        </div>
+
+        <div class="modal-footer border-secondary border-opacity-25">
+          <a href="https://wa.me/261384376156?text=Bonjour%20Julien%2C%20je%20souhaite%20échanger%20avec%20vous%20concernant%20vos%20projets" target="_blank" class="btn btn-rose-glow">
+            <i class="bi bi-whatsapp"></i> Échanger avec Julien sur ce projet
+          </a>
+          <button type="button" class="btn btn-glass-outline" data-bs-dismiss="modal">
+            Fermer
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       PIED DE PAGE (FOOTER)
+       ========================================================================== -->
+  <footer>
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <div>
+          <strong class="text-white">RABENANDRASANA Julien Gabriel</strong> &copy; 2026. Tous droits réservés.
+        </div>
+        <div class="d-flex gap-3 text-muted">
+          <span>Étudiant EMIT Informatique</span> &bull; 
+          <span>Ambalavao, Madagascar</span> &bull; 
+          <a href="https://wa.me/261384376156" target="_blank" class="text-rose text-decoration-none">+261 38 43 761 56</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 50
+    });
+  </script>
+
+  <!-- Script Interactif Principal -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
