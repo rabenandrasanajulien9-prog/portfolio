@@ -648,6 +648,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .holo-link-url {
@@ -658,6 +659,10 @@ p {
   align-items: center;
   gap: 6px;
   transition: var(--transition-smooth);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 65%;
 }
 
 .holo-link-url:hover {
@@ -834,8 +839,12 @@ p {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  z-index: 1050;
+  z-index: 2147483647 !important;
+  transform: translate3d(0, 0, 1000px);
+  -webkit-transform: translate3d(0, 0, 1000px);
+  will-change: transform;
   align-items: center;
+  pointer-events: auto;
 }
 
 .nav-dancing-btn {
@@ -1483,7 +1492,7 @@ footer {
    ========================================================================== */
 @media (max-width: 991px) {
   .hero-section {
-    padding: 120px 0 60px;
+    padding: 110px 0 50px;
     text-align: center;
   }
   .hero-title {
@@ -1496,18 +1505,23 @@ footer {
     margin: 0 auto 30px;
   }
   .flip-card-wrapper {
-    margin-top: 30px;
+    margin-top: 25px;
     width: 100%;
     max-width: 100%;
   }
   .flip-card-inner {
     max-width: 420px;
   }
+  
+  /* Masquer l'indicateur fixe centré sur mobile pour éviter tout chevauchement avec la carte */
+  .scroll-indicator-wrap {
+    display: none !important;
+  }
 }
 
 @media (max-width: 768px) {
   section {
-    padding: 70px 0;
+    padding: 65px 0;
   }
   .section-title {
     font-size: 2.1rem;
@@ -1517,18 +1531,21 @@ footer {
     margin-bottom: 35px;
   }
   
-  /* Boutons Flottants Dansants : Toujours visibles et accessibles sur mobile */
+  /* Boutons Flottants Dansants : Priorité absolue d'affichage sur smartphone */
   .floating-nav-dock {
-    bottom: 22px !important;
+    bottom: 18px !important;
     right: 14px !important;
     gap: 10px !important;
-    z-index: 99999 !important;
+    z-index: 2147483647 !important;
+    transform: translate3d(0, 0, 1000px) !important;
+    -webkit-transform: translate3d(0, 0, 1000px) !important;
+    will-change: transform !important;
   }
   .nav-dancing-btn {
-    width: 46px !important;
-    height: 46px !important;
-    font-size: 1.2rem !important;
-    box-shadow: 0 4px 18px var(--rose-glow) !important;
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 1.3rem !important;
+    box-shadow: 0 4px 22px var(--rose-glow) !important;
   }
   .nav-btn-tooltip {
     display: none !important; /* Pas de tooltip sur écran tactile */
@@ -1544,6 +1561,9 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .hero-section {
+    padding: 95px 0 40px;
+  }
   .hero-title {
     font-size: 1.85rem;
     line-height: 1.25;
@@ -1564,11 +1584,11 @@ footer {
     font-size: 0.95rem;
   }
   .flip-card-inner {
-    min-height: 490px;
+    min-height: 520px;
     max-width: 100% !important;
   }
   .flip-face {
-    padding: 16px 12px;
+    padding: 18px 14px;
     border-radius: 20px;
   }
   .holo-username {
@@ -1585,7 +1605,12 @@ footer {
     font-size: 0.68rem;
   }
   .holo-bio-lines {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
+    gap: 8px;
+  }
+  .bio-line {
+    gap: 8px;
+    font-size: 0.82rem;
   }
   .about-portrait-frame {
     width: 230px;
