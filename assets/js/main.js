@@ -123,6 +123,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Gestion du menu burger mobile (Garantie d'ouverture 100%)
+  const burgerBtn = document.querySelector('.custom-burger-btn');
+  const navCollapse = document.getElementById('portfolioNav');
+  if (burgerBtn && navCollapse) {
+    burgerBtn.addEventListener('click', () => {
+      navCollapse.classList.toggle('show');
+    });
+
+    // Fermeture automatique au clic sur un lien
+    navCollapse.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navCollapse.classList.remove('show');
+      });
+    });
+  }
+
   // Pas de défilement doux (step by step)
   const getScrollStep = () => Math.max(Math.round(window.innerHeight * 0.72), 380);
 
