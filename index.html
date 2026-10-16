@@ -26,9 +26,27 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
   <!-- Custom Luxury Glassmorphism & Rose CSS -->
-  <link rel="stylesheet" href="assets/css/style.css?v=2.1">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.2">
 </head>
 <body>
+  
+  <!-- ==========================================================================
+       DOCK DE NAVIGATION FLOTTANT : 2 BOUTONS (MONTER & DESCENDRE)
+       TOUJOURS VISIBLES SUR SMARTPHONES & PC
+       ========================================================================== -->
+  <div class="floating-nav-dock" id="floatingNavDock" style="position: fixed !important; bottom: 22px !important; right: 16px !important; z-index: 2147483647 !important; display: flex !important; flex-direction: column !important; gap: 10px !important; pointer-events: auto !important;">
+    <!-- Bouton Dansant : Monter pas à pas -->
+    <button type="button" class="nav-dancing-btn btn-scroll-up" id="btnScrollUp" title="Monter d'un cran" aria-label="Monter pas à pas">
+      <i class="bi bi-chevron-up"></i>
+      <span class="nav-btn-tooltip">Monter</span>
+    </button>
+    
+    <!-- Bouton Dansant : Descendre pas à pas -->
+    <button type="button" class="nav-dancing-btn btn-scroll-down" id="btnScrollDown" title="Descendre d'un cran" aria-label="Descendre pas à pas">
+      <i class="bi bi-chevron-down"></i>
+      <span class="nav-btn-tooltip">Descendre</span>
+    </button>
+  </div>
 
   <!-- Canevas d'Arrière-Plan Interactif (Étoiles & Particules) -->
   <canvas id="ambient-canvas"></canvas>
@@ -944,22 +962,7 @@
     </div>
   </section>
 
-  <!-- ==========================================================================
-       DOCK DE NAVIGATION FLOTTANT : 2 BOUTONS DANSANTS (MONTER & DESCENDRE)
-       ========================================================================== -->
-  <div class="floating-nav-dock" id="floatingNavDock">
-    <!-- Bouton Dansant : Monter pas à pas -->
-    <button class="nav-dancing-btn btn-scroll-up" id="btnScrollUp" title="Monter d'un cran" aria-label="Monter pas à pas">
-      <i class="bi bi-chevron-up"></i>
-      <span class="nav-btn-tooltip">Monter</span>
-    </button>
-    
-    <!-- Bouton Dansant : Descendre pas à pas -->
-    <button class="nav-dancing-btn btn-scroll-down" id="btnScrollDown" title="Descendre d'un cran" aria-label="Descendre pas à pas">
-      <i class="bi bi-chevron-down"></i>
-      <span class="nav-btn-tooltip">Descendre</span>
-    </button>
-  </div>
+
 
   <!-- ==========================================================================
        MODALE BOOTSTRAP DE DÉTAILS PROJET
@@ -1043,7 +1046,7 @@
   </script>
 
   <!-- Script Interactif Principal -->
-  <script src="assets/js/main.js?v=2.1"></script>
+  <script src="assets/js/main.js?v=2.2"></script>
 
 </body>
 </html>
