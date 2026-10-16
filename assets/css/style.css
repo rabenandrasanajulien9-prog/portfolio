@@ -218,6 +218,35 @@ p {
   50% { transform: scale(1.35); opacity: 0.65; }
 }
 
+/* Bouton Burger Mobile 3 Barres (Garanti visible sans CDN) */
+.custom-burger-btn {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 5px !important;
+  width: 44px !important;
+  height: 40px !important;
+  padding: 6px !important;
+  background: rgba(255, 42, 133, 0.15) !important;
+  border: 1.5px solid rgba(255, 42, 133, 0.5) !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+  outline: none !important;
+  transition: var(--transition-smooth);
+}
+
+.custom-burger-btn:hover {
+  background: rgba(255, 42, 133, 0.3) !important;
+  box-shadow: 0 0 15px var(--rose-glow) !important;
+}
+
+@media (min-width: 992px) {
+  .custom-burger-btn {
+    display: none !important;
+  }
+}
+
 .nav-link {
   color: var(--text-muted) !important;
   font-weight: 500;

@@ -26,25 +26,27 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
   <!-- Custom Luxury Glassmorphism & Rose CSS -->
-  <link rel="stylesheet" href="assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.3">
 </head>
 <body>
   
   <!-- ==========================================================================
        DOCK DE NAVIGATION FLOTTANT : 2 BOUTONS (MONTER & DESCENDRE)
-       TOUJOURS VISIBLES SUR SMARTPHONES & PC
+       TOUJOURS VISIBLES SUR SMARTPHONES & PC (AUTONOME & INLINE SVG)
        ========================================================================== -->
-  <div class="floating-nav-dock" id="floatingNavDock" style="position: fixed !important; bottom: 22px !important; right: 16px !important; z-index: 2147483647 !important; display: flex !important; flex-direction: column !important; gap: 10px !important; pointer-events: auto !important;">
+  <div class="floating-nav-dock" id="floatingNavDock" style="position: fixed !important; bottom: 20px !important; right: 15px !important; z-index: 2147483647 !important; display: flex !important; flex-direction: column !important; gap: 10px !important; pointer-events: auto !important;">
     <!-- Bouton Dansant : Monter pas à pas -->
-    <button type="button" class="nav-dancing-btn btn-scroll-up" id="btnScrollUp" title="Monter d'un cran" aria-label="Monter pas à pas">
-      <i class="bi bi-chevron-up"></i>
-      <span class="nav-btn-tooltip">Monter</span>
+    <button type="button" class="nav-dancing-btn btn-scroll-up" id="btnScrollUp" title="Monter" aria-label="Monter pas à pas" style="width: 48px !important; height: 48px !important; min-width: 48px !important; min-height: 48px !important; border-radius: 50% !important; background: linear-gradient(135deg, #ff2a85 0%, #ff6b9d 50%, #b80058 100%) !important; border: 1.5px solid rgba(255, 255, 255, 0.65) !important; color: #ffffff !important; display: flex !important; align-items: center !important; justify-content: center !important; cursor: pointer !important; box-shadow: 0 4px 20px rgba(255, 42, 133, 0.75) !important; outline: none !important;">
+      <svg width="22" height="22" viewBox="0 0 16 16" fill="currentColor" style="display: block;">
+        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+      </svg>
     </button>
     
     <!-- Bouton Dansant : Descendre pas à pas -->
-    <button type="button" class="nav-dancing-btn btn-scroll-down" id="btnScrollDown" title="Descendre d'un cran" aria-label="Descendre pas à pas">
-      <i class="bi bi-chevron-down"></i>
-      <span class="nav-btn-tooltip">Descendre</span>
+    <button type="button" class="nav-dancing-btn btn-scroll-down" id="btnScrollDown" title="Descendre" aria-label="Descendre pas à pas" style="width: 48px !important; height: 48px !important; min-width: 48px !important; min-height: 48px !important; border-radius: 50% !important; background: linear-gradient(135deg, #ff2a85 0%, #ff6b9d 50%, #b80058 100%) !important; border: 1.5px solid rgba(255, 255, 255, 0.65) !important; color: #ffffff !important; display: flex !important; align-items: center !important; justify-content: center !important; cursor: pointer !important; box-shadow: 0 4px 20px rgba(255, 42, 133, 0.75) !important; outline: none !important;">
+      <svg width="22" height="22" viewBox="0 0 16 16" fill="currentColor" style="display: block;">
+        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+      </svg>
     </button>
   </div>
 
@@ -66,8 +68,11 @@
         <span>JULIEN<span class="text-rose">.G</span></span>
       </a>
 
-      <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#portfolioNav" aria-controls="portfolioNav" aria-expanded="false" aria-label="Basculer la navigation">
-        <i class="bi bi-list fs-2 text-rose"></i>
+      <!-- Bouton Menu Hamburger : 3 barres roses garanties visibles sur mobile -->
+      <button class="navbar-toggler custom-burger-btn border-0" type="button" data-bs-toggle="collapse" data-bs-target="#portfolioNav" aria-controls="portfolioNav" aria-expanded="false" aria-label="Basculer le menu" style="display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; gap: 5px !important; width: 44px !important; height: 40px !important; padding: 6px !important; background: rgba(255, 42, 133, 0.15) !important; border: 1.5px solid rgba(255, 42, 133, 0.5) !important; border-radius: 10px !important; cursor: pointer !important; outline: none !important;">
+        <span style="display: block !important; width: 22px !important; height: 2.5px !important; background-color: #ff2a85 !important; border-radius: 2px !important;"></span>
+        <span style="display: block !important; width: 22px !important; height: 2.5px !important; background-color: #ff2a85 !important; border-radius: 2px !important;"></span>
+        <span style="display: block !important; width: 22px !important; height: 2.5px !important; background-color: #ff2a85 !important; border-radius: 2px !important;"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="portfolioNav">
@@ -1046,7 +1051,7 @@
   </script>
 
   <!-- Script Interactif Principal -->
-  <script src="assets/js/main.js?v=2.2"></script>
+  <script src="assets/js/main.js?v=2.3"></script>
 
 </body>
 </html>
