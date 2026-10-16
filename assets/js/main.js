@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const words = [
     "Développeur Web & Mobile",
     "Étudiant EMIT Informatique",
+    "Développeur Angular & Next.js",
     "Concepteur de CFF Manager",
     "Créateur de l'App Snack Bar",
     "Passionné de Physique & Code"
@@ -295,6 +296,19 @@ document.addEventListener('DOMContentLoaded', () => {
           "Interface mobile ultra-fluide pensée 'Mobile First' avec animations dynamiques"
         ],
         tech: ["Mobile UI / UX", "JavaScript Mobile", "Responsive Grid & Flexbox", "Caisse Tactile", "Optimisation Tactile"]
+      },
+      portfolio: {
+        title: "Portfolio Interactif - Vitrine Numérique Professionnelle",
+        badge: "Application Web Réactive & Moderne",
+        desc: "Ce portfolio officiel a été conçu et développé sur-mesure pour offrir une vitrine numérique haut de gamme, fluide et parfaitement optimisée pour tous les terminaux (ordinateurs, tablettes et smartphones). Il intègre des interactions 3D immersives, une navigation intelligente bidirectionnelle et un déploiement continu automatisé via GitHub Pages.",
+        features: [
+          "Architecture 100% Mobile-First fluide et sans débordement sur smartphones",
+          "Carte holographique réversible 3D (Recto/Verso avec effet Flip interactif)",
+          "Système de navigation flottant bidirectionnel (Monter/Descendre pas à pas)",
+          "Formulaire de contact direct synchronisé avec l'API WhatsApp",
+          "Optimisation des contrastes visuels pour une lisibilité parfaite"
+        ],
+        tech: ["HTML5 Sémantique", "CSS3 Moderne", "JavaScript ES6+", "Bootstrap 5.3", "Responsive Design", "Git & GitHub Pages"]
       }
     };
 

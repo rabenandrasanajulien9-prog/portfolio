@@ -46,10 +46,26 @@ html {
 body {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background-color: var(--bg-deep);
-  color: var(--text-main);
+  color: #ffffff;
   overflow-x: hidden;
   position: relative;
   line-height: 1.6;
+}
+
+/* High Contrast Global Text - Aucun Texte Sombre Illisible */
+.text-muted,
+.text-secondary {
+  color: #cbd5e1 !important;
+}
+
+p {
+  color: #f1f5f9;
+}
+
+.opacity-75,
+.opacity-90 {
+  opacity: 1 !important;
+  color: #f1f5f9 !important;
 }
 
 /* Background Canvas & Ambient Orbs */
@@ -1279,25 +1295,107 @@ section {
   box-shadow: 0 0 22px var(--rose-subtle);
 }
 
-.progress-custom {
-  height: 9px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 10px;
+/* ==========================================================================
+   PORTRAIT PROFESSIONNEL (Cadre Arrondi / Circulaire de Luxe)
+   ========================================================================== */
+.about-portrait-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.progress-bar-rose {
-  background: var(--rose-gradient);
-  border-radius: 10px;
-  box-shadow: 0 0 14px var(--rose-glow);
+.about-portrait-frame {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, #ff2a85 0%, #7928ca 50%, #00f2fe 100%);
+  box-shadow: 0 0 35px rgba(255, 42, 133, 0.45), 0 20px 45px rgba(0, 0, 0, 0.75);
+  margin-bottom: 22px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-portrait-frame:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 50px rgba(255, 42, 133, 0.65), 0 25px 55px rgba(0, 0, 0, 0.85);
+}
+
+.about-portrait-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 15%;
+  border: 4px solid #0d0c18;
+}
+
+.portrait-badge-status {
+  position: absolute;
+  bottom: 8px;
+  right: 14px;
+  background: rgba(14, 11, 26, 0.94);
+  border: 1.5px solid var(--primary-rose);
+  color: #ffffff !important;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.status-pulse-dot {
+  width: 9px;
+  height: 9px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #22c55e;
+  animation: pulseGreen 1.8s infinite;
+}
+
+@keyframes pulseGreen {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.35); opacity: 0.65; }
 }
 
 /* ==========================================================================
-   CONTACT SECTION
+   SKILLS TAGS (Sans Progress Bar - 100% Professionnel)
+   ========================================================================== */
+.skill-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.skill-tech-badge {
+  background: rgba(255, 42, 133, 0.12);
+  border: 1px solid rgba(255, 42, 133, 0.35);
+  color: #ffffff !important;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 8px;
+  transition: var(--transition-smooth);
+}
+
+.skill-tech-badge:hover {
+  background: var(--primary-rose);
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 42, 133, 0.4);
+}
+
+/* ==========================================================================
+   CONTACT SECTION (Contraste Élevé - Aucun Texte Noir)
    ========================================================================== */
 .contact-glass-card {
-  background: var(--bg-card);
+  background: rgba(20, 16, 35, 0.85);
   backdrop-filter: blur(22px);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-lg);
@@ -1305,33 +1403,42 @@ section {
   box-shadow: 0 20px 50px rgba(0,0,0,0.55);
 }
 
+.form-label {
+  color: #f8fafc !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
 .form-control-glass {
-  background: rgba(255, 255, 255, 0.045);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #fff !important;
+  background: rgba(26, 20, 44, 0.9) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
   border-radius: 12px;
   padding: 14px 18px;
-  font-size: 0.96rem;
+  font-size: 0.98rem;
   transition: var(--transition-smooth);
 }
 
 .form-control-glass:focus {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--primary-rose);
-  box-shadow: 0 0 20px var(--rose-glow);
+  background: rgba(30, 24, 52, 0.95) !important;
+  border-color: var(--primary-rose) !important;
+  box-shadow: 0 0 22px var(--rose-glow) !important;
+  color: #ffffff !important;
   outline: none;
 }
 
 .form-control-glass::placeholder {
-  color: rgba(255, 255, 255, 0.42);
+  color: #94a3b8 !important;
+  opacity: 1;
 }
 
 .social-button-card {
   display: flex;
   align-items: center;
   gap: 16px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 18px 24px;
   border-radius: 16px;
   color: #fff;
@@ -1366,41 +1473,137 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 32px 0;
   text-align: center;
-  background: rgba(7, 7, 13, 0.94);
-  color: var(--text-muted);
+  background: rgba(7, 7, 13, 0.96);
+  color: #cbd5e1 !important;
   font-size: 0.92rem;
 }
 
 /* ==========================================================================
-   RESPONSIVENESS
+   RESPONSIVITÉ ULTRA-OPTIMISÉE (SMARTPHONES, TABLETTES & DESKTOPS)
    ========================================================================== */
 @media (max-width: 991px) {
+  .hero-section {
+    padding: 120px 0 60px;
+    text-align: center;
+  }
   .hero-title {
-    font-size: 2.6rem;
+    font-size: clamp(2.2rem, 5.5vw, 2.8rem);
+  }
+  .typing-wrapper {
+    justify-content: center;
+  }
+  .hero-description {
+    margin: 0 auto 30px;
+  }
+  .flip-card-wrapper {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 100%;
   }
   .flip-card-inner {
-    max-width: 390px;
-    margin-top: 20px;
+    max-width: 420px;
   }
 }
 
-@media (max-width: 576px) {
-  .hero-title {
-    font-size: 2.2rem;
+@media (max-width: 768px) {
+  section {
+    padding: 70px 0;
   }
-  .typing-wrapper {
-    font-size: 1.3rem;
+  .section-title {
+    font-size: 2.1rem;
   }
-  .flip-face {
-    padding: 18px;
+  .section-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 35px;
+  }
+  
+  /* Boutons Flottants Dansants : Toujours visibles et accessibles sur mobile */
+  .floating-nav-dock {
+    bottom: 22px !important;
+    right: 14px !important;
+    gap: 10px !important;
+    z-index: 99999 !important;
+  }
+  .nav-dancing-btn {
+    width: 46px !important;
+    height: 46px !important;
+    font-size: 1.2rem !important;
+    box-shadow: 0 4px 18px var(--rose-glow) !important;
+  }
+  .nav-btn-tooltip {
+    display: none !important; /* Pas de tooltip sur écran tactile */
+  }
+
+  .about-portrait-frame {
+    width: 270px;
+    height: 270px;
   }
   .contact-glass-card {
-    padding: 24px;
+    padding: 24px 18px;
   }
-  .back-to-top-btn {
-    bottom: 20px;
-    right: 20px;
-    width: 48px;
-    height: 48px;
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+  .typing-wrapper {
+    font-size: 1.05rem;
+    height: 44px;
+    min-height: 44px;
+  }
+  .badge-scientific {
+    font-size: 0.78rem;
+    padding: 6px 12px;
+  }
+  .btn-rose-glow,
+  .btn-glass-outline {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+  .flip-card-inner {
+    min-height: 490px;
+    max-width: 100% !important;
+  }
+  .flip-face {
+    padding: 16px 12px;
+    border-radius: 20px;
+  }
+  .holo-username {
+    font-size: 0.95rem;
+  }
+  .holo-avatar-wrap {
+    width: 70px;
+    height: 70px;
+  }
+  .holo-stat-item .stat-num {
+    font-size: 1.05rem;
+  }
+  .holo-stat-item .stat-lbl {
+    font-size: 0.68rem;
+  }
+  .holo-bio-lines {
+    font-size: 0.8rem;
+  }
+  .about-portrait-frame {
+    width: 230px;
+    height: 230px;
+  }
+  .portrait-badge-status {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    right: 5px;
+    bottom: 5px;
+  }
+  .project-preview {
+    height: 210px;
+  }
+  .timeline-track {
+    padding-left: 26px;
+  }
+  .timeline-item::before {
+    left: -24px;
   }
 }
